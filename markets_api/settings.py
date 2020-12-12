@@ -39,7 +39,7 @@ if DEBUG:
 else:
     raise NotImplementedError('Production environment not defined')
 
-ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())  # 'localhost', '127.0.0.1', '[::1]'
+ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 
 
 # Application definition
@@ -95,8 +95,8 @@ DATABASES = {
         'NAME': MARKETS_API_DB_NAME,
         'USER': MARKETS_API_DB_USER,
         'PASSWORD': MARKETS_API_DB_PASS,
-        'HOST': 'localhost',
-        'PORT': '',
+        'HOST': MARKETS_API_DB_HOST,
+        'PORT': MARKETS_API_DB_PORT,
     }
 }
 
